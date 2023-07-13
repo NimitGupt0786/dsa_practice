@@ -1,20 +1,26 @@
-https://leetcode.com/problems/implement-queue-using-stacks/
-from collections import deque
-class MyQueue(object):
+https://leetcode.com/problems/implement-stack-using-queues/
+class MyStack(object):
 
     def __init__(self):
-        self.q=deque()      
+        self.stack=[]
 
-    def push(self, x):  
-        self.q.append(x)
+    def push(self, x):
+        lists=self.stack
+        lists.append(x)
+    
+    def empty(self):   
+        lists=self.stack
+        if(len(lists)==0):
+            return True
+        else:
+            return False
 
     def pop(self):
-        return self.q.popleft()
+        lists=self.stack
+        return lists.pop()
         
 
-    def peek(self):
-        return self.q[0]
+    def top(self):
+        lists=self.stack
+        return lists[-1]
         
-
-    def empty(self):
-        return len(self.q)==0

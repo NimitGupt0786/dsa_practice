@@ -42,3 +42,16 @@ q=deque()
 q.append(root)
 count=[1]
 print(levelwise(root,q,count))
+
+OR
+
+class Solution:
+    def height(self, root):
+        if root == None:
+            return 0
+        
+        left=self.height(root.left)
+        right=self.height(root.right)
+        
+        ans=max(left,right)+1
+        return ans
